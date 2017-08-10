@@ -1,0 +1,6 @@
+=> npm install -g http-server
+=> Change to the directory containing your static web files (e.g. html, javascript, css etc) in the command line window
+=> http-server
+=> Open your browser and go to the address http://localhost:8080 and you should see your local website. 
+=> to uninstall any package do => npm uninstall 'pkg name'
+=> npm install npm@latest -g 

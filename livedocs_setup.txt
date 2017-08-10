@@ -1,0 +1,8 @@
+1. Create "livedocs" folder in MLS_GAP_SHARED_REACT.
+2. Change all occurance of "spec" to "livedocs".
+3. Change line number 21 in server.js file.
+4. Change referrence of "spec.js" to "livedocs.js" in livedocs/index.html.
+
+
+
+5. install url loader. add module loader in webpack

@@ -1,0 +1,129 @@
+﻿>> Clone a single branch
+ 	git clone -b react-toolbox-beta --single-branch ssh://git@gitlab.kineodev.com:2222/NGP/MLS_GAP_SHARED_REACT.git
+	git clone -b dev-master --single-branch ssh://git@gitlab.kineodev.com:2222/NGP/MLS_GAP_SHARED_DPL.git
+	git clone -b sjm-FIX-dpl_drawer-permanentAt-prop --single-branch ssh://git@gitlab.kineodev.com:2222/NGP/MLS_GAP_SHARED_DPL.git
+
+>> Clone  from repository -
+ 	git clone  ssh://git@gitlab.kineodev.com:2222/NGP/MLS_GAP_SHARED_REACT.git
+
+
+>> Steps to commit via git bash -
+1. git fetch
+
+2. git add .
+
+3. git commit -n -m 'add some msg'
+
+4. git push origin <branch name>
+
+
+>> pull from gitlab 
+	git checkout -b <brnach name>
+	git pull origin <branch name>
+
+>> pull forcefully -
+	git fetch --all
+	git reset --hard <branch_name>
+	git pull
+
+
+
+
+//LIVEDOCS SETUP -
+
+>> Command to create docker image
+	docker build -f Dockerfile -t live-docs .
+
+>> to see the list of images
+	docker images
+
+>> to run livedocs image
+	docker run -d -p 8083:8080 live-docs
+
+>> to view the logs
+	docker logs -f <305cf374fd3e722c4db2ae3c0f832a1f19f6bfa929b7946aa0db3304888eb723>
+
+>> to stop the application, you must stop the container
+
+>> To see the list of containers 
+	docker ps -as
+	docker stop <imageid>
+
+>> to remove container
+	docker rm <containerid>
+
+>> to remove an image
+	docker rmi <imageid>
+
+>> To manually deploy the livedocs images on to the server
+there is a url they can hit if they want to manually, but it makes not difference as that is all the build server is doing
+	https://docs.new-pivot.com/refresh/8dhg28t5js6fj110jfDHFKFJS
+
+>> URL for Livedocs 
+	https://docs.new-pivot.com/
+
+>> JIRA tickets
+	Chris’s comments:
+	https://support.kineo.com/browse/PIVOTAGILE-788
+
+>> Regularly update your subtasks on the following user story
+	https://support.kineo.com/browse/PIVOTAGILE-810
+
+
+
+//PRESENATTION PROJECT SETUP -
+
+>>  git clone ssh://git@gitlab.kineodev.com:2222/NGP/MLS_REPORTING_DOCKER.git
+	cd MLS_REPORTING_DOCKER
+	git fetch
+	git checkout dev-master-all
+
+>>  git clone ssh://git@gitlab.kineodev.com:2222/NGP/MLS_GAP_PRESENTATION.git
+	cd MLS_GAP_PRESENTATION
+	git fetch
+	git checkout dev-master
+
+>>  git clone ssh://git@gitlab.kineodev.com:2222/NGP/MLS_GAP_GATEWAY.git
+	cd MLS_GAP_GATEWAY
+	git fetch
+	git checkout dev-master
+
+>>  git clone ssh://git@gitlab.kineodev.com:2222/NGP/MLS_GAP_GRAPHQL.git
+	cd MLS_GAP_GRAPHQL
+	git fetch
+	git checkout dev-master
+
+>> <code-root>/MLS_GAP_PRESENTATION
+	npm install
+	cp .env.EXAMPLE .env
+	npm run get-biomes
+	npm run build
+	npm start
+
+>> <code-root>/MLS_GAP_GRAPHQL
+	 npm install
+
+>> <code-root>/MLS_REPORTING_DOCKER/DEVELOPMENT_LOCAL
+	Using your editor open the .env file. Modify:
+	LOCAL_CODE_PATH=<code-root>
+	…
+	LOG_PATH=<code-root>/logs
+
+>> docker commands -
+	docker-compose -f docker-compose-DEV-LOCAL.yml pull
+	docker-compose -f docker-compose-DEV-LOCAL.yml up --build
+	docker-compose -f docker-compose-DEV-LOCAL.yml down --volumes
+
+
+
+
+// upload Steps for Presentation Project
+remove pivot ui line with git link
+Upload Presentation
+Upload report Biome
+jira update
+slack update
+
+
+
+https://support.kineo.com/issues/?jql=text%20~%20%22reports%20ui%22%20AND%20assignee%20in%20(kineomichael)
